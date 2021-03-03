@@ -6,9 +6,8 @@ export const Container = styled.div`
 `
 
 export const ContainerForm = styled.form`
-    max-width: 600px;
-    margin: auto;
     display:flex;
+    align-items: center;
     flex-direction: column;
     position: relative;
     padding-top: 13px;
