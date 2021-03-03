@@ -1,33 +1,40 @@
 import { createActions, createReducer } from "reduxsauce";
 
 export const { Types, Creators } = createActions({
-  fetchUser: ["payload"],
-  getAllUser: ["payload"],
-  addUser: ["payload"],
+  getAllTodo: ["payload"],
+  addTodo: ["payload"],
+  successTodo: ["payload"],
+  deleteTodo: ["id"]
 });
 
 const INITIAL_STATE = {
   payload: [],
 };
 
-const fetchTodo = (state = INITIAL_STATE) => ({
-  ...state,
-});
-
-const getTodo = (state = INITIAL_STATE, action) => ({
+const getAllTodo = (state = INITIAL_STATE, action) => ({
   ...state,
   payload: action.payload,
 });
 
 const addTodo = (state = INITIAL_STATE, action) => ({
   ...state,
-  payload: [...state.payload, action.payload],
+});
+
+const successTodo = (state = INITIAL_STATE, action) => ({
+  ...state,
+  payload: action.payload,
+});
+
+const deleteTodo = (state = INITIAL_STATE, action) => ({
+  ...state,
+  id: action.id,
 });
 
 const HANDLERS = {
-  [Types.FETCH_TODO]: fetchTodo,
-  [Types.GET_ALL_TODO]: getTodo,
+  [Types.GET_ALL_TODO]: getAllTodo,
   [Types.ADD_TODO]: addTodo,
+  [Types.SUCCESS_TODO]: successTodo,
+  [Types.DELETE_TODO]: deleteTodo,
 };
 
 export default createReducer(INITIAL_STATE, HANDLERS);

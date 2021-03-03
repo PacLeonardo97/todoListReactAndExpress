@@ -9,14 +9,17 @@ require('./database');
 
 //Start App
 const app = express();
+
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-app.use(bodyParser.json({ type: 'application/*+json' }));
-// app.use(bodyParser.json());
-
+app.use(bodyParser.json());
+const corsOptions = {
+    origin: '*',
+    optionsSuccessStatus: 200
+};
 //Enable Cors
-app.use(cors());
+app.use(cors(corsOptions));
 
 //Routes
 app.use(routes);
