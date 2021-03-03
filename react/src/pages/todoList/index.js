@@ -13,7 +13,7 @@ const TodoList = () => {
 
     useEffect(() => {
         dispatch(TodoCreators.getAllTodo());
-    }, [])
+    }, [dispatch])
 
     const onSubmit = event => {
         event.preventDefault();
