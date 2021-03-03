@@ -16,7 +16,7 @@ const getAllTodo = (state = INITIAL_STATE, action) => ({
   payload: action.payload,
 });
 
-const addTodo = (state = INITIAL_STATE, action) => ({
+const addTodo = (state = INITIAL_STATE) => ({
   ...state,
 });
 

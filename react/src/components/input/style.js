@@ -16,9 +16,11 @@ export const Container = styled.div`
         -moz-transition: all .1s linear;
         -webkit-appearance:none;
     }
+
     input:focus{
         border: 2px solid #3951b2;
     }
+
     input::placeholder{
         color:transparent;
     }
